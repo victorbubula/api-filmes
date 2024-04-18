@@ -22,6 +22,7 @@ class Filme(models.Model):
     tipo = models.CharField(max_length=1, choices=TIPO, blank=False, null=False, default='F')
     genero1 = models.CharField(max_length=3, choices=GENEROS, blank=False, null=False, default='Ac')
     genero2 = models.CharField(max_length=3, choices=GENEROS, blank=False, null=False, default='Av')
+    genero3 = models.CharField(max_length=3, choices=GENEROS, blank=False, null=False, default='C')
     imagem = models.CharField(max_length=200,unique=True)
     assistido = models.BooleanField(default='False')
 
