@@ -23,7 +23,7 @@ class Filme(models.Model):
     genero1 = models.CharField(max_length=3, choices=GENEROS, blank=False, null=False, default='Ac')
     genero2 = models.CharField(max_length=3, choices=GENEROS, blank=False, null=False, default='Av')
     genero3 = models.CharField(max_length=3, choices=GENEROS, blank=False, null=False, default='C')
-    imagem = models.CharField(max_length=200,unique=True)
+    imagem = models.ImageField()
     assistido = models.BooleanField(default='False')
 
     def __str__(self):
