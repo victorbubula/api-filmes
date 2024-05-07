@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x0ir^*3!-fi(f4c(=3hz!47jp_)yoj+@n0qezrlmv3ocv1x082'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'filmes',
     'django_filters',
     'corsheaders',
+    'admin_honeypot',
 ]
 
 MIDDLEWARE = [
@@ -131,10 +132,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
     'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.IsAuthenticated',
-                                  'rest_framework.permissions.DjangoModelPermissions'],
+                                 'rest_framework.permissions.DjangoModelPermissions'],
     'DEFAULT_AUTHENTICATION_CLASSES':['rest_framework.authentication.BasicAuthentication',],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5
+    'PAGE_SIZE': 5,
+    #'DEFAULT_PARSER_CLASSES': [
+     #   'rest_framework.parsers.JSONParser',
+        #'rest_framework_xml.parsers.XMLParser',
+    #],
+    #'DEFAULT_RENDERER_CLASSES': [
+    #    'rest_framework.renderers.JSONRenderer',
+    #    #'rest_framework_xml.renderers.XMLRenderer',
+    #]
 }
 
 CORS_ALLOWED_ORIGINS = [

@@ -12,7 +12,7 @@ class FilmesViewSet(viewsets.ModelViewSet):
     ordering_fields = ['nome']
     search_fields = ['nome', 'genero1', 'genero2']
     filterset_fields = ['assistido']
-    http_method_names = ['get', 'post', 'put', 'path', 'delete']
+    http_method_names = ['get', 'post', 'put', 'path']
     
     def get_serializer_class(self):
         if self.request.version == 'v2':
